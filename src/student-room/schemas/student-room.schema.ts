@@ -15,4 +15,4 @@ export class StudentRoom {
   roomId: Room;
 }
 
-export const StudentRoomchema = SchemaFactory.createForClass(StudentRoom);
+export const StudentRoomSchema = SchemaFactory.createForClass(StudentRoom);
