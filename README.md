@@ -22,6 +22,14 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Environment Variables
+
+1. MONGODB_URI: is the uri for database
+
+## API Documentation
+
+[API Documentation Postman](https://documenter.getpostman.com/view/9110478/2s93XvWjrY) 
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
