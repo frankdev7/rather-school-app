@@ -14,11 +14,11 @@ export class StudentRoomRepository {
   ) {}
 
   async findAllStudentRoom(): Promise<StudentRoom[]> {
-    return this.studentRoomModel.find().exec();
+    return await this.studentRoomModel.find().exec();
   }
 
   async findAllStudentRoomDetails(): Promise<StudentRoom[]> {
-    return this.studentRoomModel.aggregate([
+    return await this.studentRoomModel.aggregate([
       {
         $lookup: {
           from: 'students',

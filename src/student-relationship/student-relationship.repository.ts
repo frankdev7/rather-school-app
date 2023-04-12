@@ -13,7 +13,7 @@ export class StudentRelationshipRepository {
   ) {}
 
   async findByStudentId(id: string): Promise<StudentRelationship[]> {
-    return this.studentRelationshipModel.aggregate([
+    return await this.studentRelationshipModel.aggregate([
       {
         $match: { student1Id: new mongoose.Types.ObjectId(id) },
       },

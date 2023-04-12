@@ -12,11 +12,11 @@ export class StudentRepository {
   ) {}
 
   async findAll(): Promise<Student[]> {
-    return this.studentModel.find().exec();
+    return await this.studentModel.find().exec();
   }
 
   async create(createStudentDto: CreateStudentDto): Promise<Student> {
-    const createStudent = this.studentModel.create(createStudentDto);
+    const createStudent = await this.studentModel.create(createStudentDto);
     return createStudent;
   }
 
