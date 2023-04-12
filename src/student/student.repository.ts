@@ -8,15 +8,15 @@ import { UpdateStudentDto } from './dto/update-Student.dto';
 @Injectable()
 export class StudentRepository {
   constructor(
-    @InjectModel(Student.name) private readonly StudentModel: Model<Student>,
+    @InjectModel(Student.name) private readonly studentModel: Model<Student>,
   ) {}
 
   async findAll(): Promise<Student[]> {
-    return this.StudentModel.find().exec();
+    return this.studentModel.find().exec();
   }
 
   async create(createStudentDto: CreateStudentDto): Promise<Student> {
-    const createStudent = this.StudentModel.create(createStudentDto);
+    const createStudent = this.studentModel.create(createStudentDto);
     return createStudent;
   }
 
@@ -24,18 +24,18 @@ export class StudentRepository {
     id: string,
     updateStudentDto: UpdateStudentDto,
   ): Promise<Student> {
-    const updateStudent = await this.StudentModel.findByIdAndUpdate(
-      { _id: id },
-      updateStudentDto,
-      { new: true },
-    ).exec();
+    const updateStudent = await this.studentModel
+      .findByIdAndUpdate({ _id: id }, updateStudentDto, { new: true })
+      .exec();
     return updateStudent;
   }
 
   async delete(id: string): Promise<Student> {
-    const deletedStudent = await this.StudentModel.findByIdAndRemove({
-      _id: id,
-    }).exec();
+    const deletedStudent = await this.studentModel
+      .findByIdAndRemove({
+        _id: id,
+      })
+      .exec();
     return deletedStudent;
   }
 }

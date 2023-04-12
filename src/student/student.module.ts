@@ -11,5 +11,6 @@ import { Student, Studentchema } from './schemas/student.schema';
   ],
   providers: [StudentService, StudentRepository],
   controllers: [StudentController],
+  exports: [StudentService, StudentRepository],
 })
 export class StudentModule {}
