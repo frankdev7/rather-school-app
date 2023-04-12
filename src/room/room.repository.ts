@@ -12,11 +12,11 @@ export class RoomRepository {
   ) {}
 
   async findAll(): Promise<Room[]> {
-    return this.roomModel.find().exec();
+    return await this.roomModel.find().exec();
   }
 
   async create(createRoomDto: CreateRoomDto): Promise<Room> {
-    const createRoom = this.roomModel.create(createRoomDto);
+    const createRoom = await this.roomModel.create(createRoomDto);
     return createRoom;
   }
 
