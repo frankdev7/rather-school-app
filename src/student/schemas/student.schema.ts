@@ -12,4 +12,4 @@ export class Student {
   surname: string;
 }
 
-export const Studentchema = SchemaFactory.createForClass(Student);
+export const StudentSchema = SchemaFactory.createForClass(Student);

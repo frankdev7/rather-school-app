@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Student } from './schemas/Student.schema';
-import { CreateStudentDto } from './dto/create-Student.dto';
-import { UpdateStudentDto } from './dto/update-Student.dto';
+import { Student } from './schemas/student.schema';
+import { CreateStudentDto } from './dto/create-student.dto';
+import { UpdateStudentDto } from './dto/update-student.dto';
 
 @Injectable()
 export class StudentRepository {
