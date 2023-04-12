@@ -13,7 +13,7 @@ export class StudentRelationshipRepository {
   ) {}
 
   async findByStudentId(id: string): Promise<StudentRelationship[]> {
-    const result = await this.studentRelationshipModel.aggregate([
+    return this.studentRelationshipModel.aggregate([
       {
         $match: { student1Id: new mongoose.Types.ObjectId(id) },
       },
@@ -42,11 +42,7 @@ export class StudentRelationshipRepository {
       {
         $project: { student1: 1, student2: 1, relationship: 1 },
       },
-      {
-        $limit: 1,
-      },
     ]);
-    return result[0];
   }
 
   async create(
